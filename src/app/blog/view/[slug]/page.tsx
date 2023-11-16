@@ -1,11 +1,13 @@
 import { SanityDocument } from "@sanity/client";
 import { draftMode } from "next/headers";
+import { unstable_noStore as noStore } from "next/cache";
 import Post from "@/app/blog/_components/Post";
 import { postPathsQuery, postQuery } from "../../../../../sanity/lib/queries";
 import { sanityFetch, token } from "../../../../../sanity/lib/sanityFetch";
 import { client } from "../../../../../sanity/lib/client";
 import PreviewProvider from "@/app/blog/_components/PreviewProvider";
 import PreviewPost from "@/app/blog/_components/PreviewPost";
+import { Fascinate_Inline } from "next/font/google";
 
 // Prepare Next.js to know which routes already exist
 export async function generateStaticParams() {
@@ -16,6 +18,10 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: any }) {
+	if(process.env.STAGE === 'development') {
+		noStore();
+	}
+
 	const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
 	const isDraftMode = draftMode().isEnabled;
 
@@ -29,8 +35,3 @@ export default async function Page({ params }: { params: any }) {
 
 	return <Post post={post} />;
 }
-
-// If we are in developement, we don't want to be loading cached posts
-const isDynamic = (process.env.STAGE === 'development') ? "force-dynamic" : "auto";
-// console.log('isDynamic', isDynamic);
-export const dynamic = isDynamic;

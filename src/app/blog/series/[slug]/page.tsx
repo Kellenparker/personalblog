@@ -20,9 +20,9 @@ export default async function Home({ params }: { params: { slug: string } }) {
 
 	return (
 		<main>
-			<div className='container mx-auto max-w-screen-md prose mt-5 mb-10'>
+			<div className='container mx-auto max-w-screen-md prose my-10'>
 				<div className='pattern-tri p-2'>
-					<h1 className='bg-white w-fit p-2 m-0'>{series.title}</h1>
+					<h1 className='bg-white  dark:bg-dark dark:text-white w-fit p-2 m-0'>{series.title}</h1>
 				</div>
 			</div>
 			<Posts posts={posts} />

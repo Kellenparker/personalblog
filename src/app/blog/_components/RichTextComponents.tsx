@@ -1,8 +1,8 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
+import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../../../../sanity/lib/client";
+import { obsidian } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 const builder = imageUrlBuilder(client);
 
 export const RichTextComponents = {
@@ -14,7 +14,7 @@ export const RichTextComponents = {
 						className='py-0 my-0 font-mono'
 						showLineNumbers={true}
 						language={value.language}
-						style={docco}
+						style={obsidian}
 						customStyle={{ borderRadius: "0" }}
 					>
 						{value.code}
@@ -28,7 +28,7 @@ export const RichTextComponents = {
 				return null;
 			}
 			return (
-				<img
+				<Image
 					className='mx-auto'
 					src={builder.image(value).width(300).height(300).url()}
 					width={300}
@@ -39,4 +39,9 @@ export const RichTextComponents = {
 		},
 	},
 	block: {},
+	marks: {
+		code: ({ children }: any) => {
+			return <code className='bg-[#282b2e] text-white dark:border border-gray-500 text-sm p-1 not-prose font-mono'>{children}</code>;
+		}
+	},
 };

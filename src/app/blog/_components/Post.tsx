@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
@@ -19,6 +17,7 @@ function formatDate(dateString: string): string {
 }
 
 export default function Post({ post }: { post: SanityDocument }) {
+	const randomPattern = getRandomPatternClass();
 	// Esnure that post exists, with at least a title
 	if (!post || !post.title) {
 		// Return a blog post not found page
@@ -26,11 +25,11 @@ export default function Post({ post }: { post: SanityDocument }) {
 	}
 
 	return (
-		<main className='container mx-auto prose prose-lg max-w-screen-md mb-60 py-4'>
-			<div className={`${getRandomPatternClass()} p-2 my-2`}>
-				<h1 className='bg-white w-fit p-2 m-0'>{post.title}</h1>
+		<main className='container mx-auto prose dark:prose-invert prose-lg max-w-screen-md mb-60'>
+			<div className={`${randomPattern} p-2 mt-10`}>
+				<h1 className='bg-white text-black w-fit p-2 m-0'>{post.title}</h1>
 				<div className="flex flex-row justify-between">
-					<p className='text-sm bg-white w-fit p-2 m-0 mt-2'>{formatDate(post.publishedAt)}</p>
+					<p className='text-sm  text-black  bg-white w-fit p-2 m-0 mt-2'>{formatDate(post.publishedAt)}</p>
 					{/** TODO: if more than one post per series is desired; change this */}
 					<Link href={"/blog/series/" + post.series[0].slug.current} className='text-sm no-underline text-gray-600 hover:text-primary bg-white w-fit p-2 m-0 mt-2'>{post.series[0].title}</Link>
 				</div>

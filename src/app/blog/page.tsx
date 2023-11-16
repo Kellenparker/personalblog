@@ -5,8 +5,13 @@ import { sanityFetch, token } from "../../../sanity/lib/sanityFetch";
 import { draftMode } from "next/headers";
 import PreviewPosts from "@/app/blog/_components/PreviewPosts";
 import PreviewProvider from "@/app/blog/_components/PreviewProvider";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function Home() {
+	if(process.env.STAGE === 'development') {
+		noStore();
+	}
+
 	const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
 	const isDraftMode = draftMode().isEnabled;
 
@@ -20,17 +25,12 @@ export default async function Home() {
 
 	return (
 		<main>
-			<div className='container mx-auto max-w-screen-md prose mt-5 mb-10'>
+			<div className='container mx-auto max-w-screen-md prose my-10'>
 				<div className='pattern-head p-2'>
-					<h1 className='bg-white w-fit p-2 m-0'>Blog</h1>
+					<h1 className='bg-white dark:bg-dark dark:text-white w-fit p-2 m-0'>Blog</h1>
 				</div>
 			</div>
 			<Posts posts={posts} />
 		</main>
 	);
 }
-
-// If we are in developement, we don't want to be loading cached posts
-const isDynamic = process.env.STAGE === "development" ? "force-dynamic" : "auto";
-//console.log('isDynamic', isDynamic);
-export const dynamic = isDynamic;

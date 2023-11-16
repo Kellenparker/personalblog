@@ -29,20 +29,24 @@ const config: Config = {
 				primary: {
 					DEFAULT: "#44BBA4",
 				},
+				dark: {
+					DEFAULT: "#252729",
+					darker: "#1C1D1E",
+				},
 				pattern: {
 					one: {
-						one: "#AAE2DB",
-						two: "#AAC3B6",
-						three: "#EBE4EC",
-						four: "#E5EDF8",
-						five: "#C6D4DF",
+						one: "#19415E",
+						two: "#132C40",
+						three: "#09131C",
+						four: "#0A1724",
+						five: "#0B1E28",
 					},
 					two: {
-						one: "#D4AFB9",
-						two: "#D1CFE2",
-						three: "#9CADCE",
-						four: "#7EC4CF",
-						five: "#52B2CF",
+						one: "#E9F2F5",
+						two: "#EDF6F7",
+						three: "#EBEDF0",
+						four: "#E6E3E5",
+						five: "#DEDDDC",
 					},
           three: {
             one: "#393E41",
