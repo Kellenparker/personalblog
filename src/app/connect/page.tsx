@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next/types";
 
 const Connect = () => {
 	return (
@@ -11,15 +11,17 @@ const Connect = () => {
 					<p className='dark:text-white mb-5'>kellenrparker@gmail.com</p>
 					<p className='dark:text-white'>
 						<Link
-							className='text-gray-600 dark:text-gray-200 hover:text-primary transition'
+							className='text-gray-600 dark:text-white  hover:text-primary transition no-underline'
 							href='https://github.com/kellenparker/'
+							target='_blank'
 						>
 							Github
 						</Link>{" "}
 						•{" "}
 						<Link
-							className='text-gray-600 dark:text-gray-200 hover:text-primary transition'
+							className='text-gray-600 dark:text-white  hover:text-primary transition no-underline'
 							href='https://www.linkedin.com/in/kellen-parker/'
+							target='_blank'
 						>
 							LinkedIn
 						</Link>
@@ -28,6 +30,11 @@ const Connect = () => {
 			</div>
 		</main>
 	);
+};
+
+export const metadata: Metadata = {
+	title: "Kellen Parker - Connect",
+	description: "Connect with me!",
 };
 
 export default Connect;

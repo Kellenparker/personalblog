@@ -8,9 +8,7 @@ import PreviewProvider from "@/app/blog/_components/PreviewProvider";
 import { unstable_noStore as noStore } from "next/cache";
 
 export default async function Home() {
-	if(process.env.STAGE === 'development') {
-		noStore();
-	}
+	noStore();
 
 	const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
 	const isDraftMode = draftMode().isEnabled;
@@ -34,3 +32,9 @@ export default async function Home() {
 		</main>
 	);
 }
+
+// If we are in developement, we don't want to be loading cached posts
+// Also, this seem to work better than noStore?
+const isDynamic = process.env.STAGE === "development" ? "force-dynamic" : "auto";
+//console.log('isDynamic', isDynamic);
+export const dynamic = isDynamic;

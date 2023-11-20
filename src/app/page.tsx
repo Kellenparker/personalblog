@@ -1,6 +1,6 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next/types";
 
 export default function Home() {
 	return (
@@ -8,21 +8,35 @@ export default function Home() {
 			<div className='pattern-head p-2'>
 				<h1 className='bg-white dark:bg-dark w-fit p-2 m-0'>Welcome!</h1>
 			</div>
-			<h3>Embark on a Coding Odyssey</h3>
+			<h3>Hello World!</h3>
 			<p>
-				Hello World! I&apos;m [Your Name], and this is where my thoughts unfold into code. As a fervent developer and
-				lifelong learner, my blog is a tapestry of my adventures in coding—from the initial spark of an idea to
-				the final semicolon. It&apos;s a chronicle of trials and triumphs, where each post is a peek into the
-				methodologies and musings behind my projects. Join me on this quest for knowledge as we decode the
-				intricacies of technology together.
+				Welcome to my blog! My name is Kellen Parker and I am a software developer based in Texas. My passions,
+				which will be expressed through the blog, include web developement, simulation, and system design. This
+				blog is my way of organizing and articulating my thoughts on these topics.
 			</p>
-			<h3>A Diary of Development</h3>
+			<h3>Blog Specs</h3>
 			<p>
-				Think of this space as my open-source diary, where I document my journey through new frameworks, dissect
-				algorithms, and share ah-ha moments that happen along the way. Whether I&apos;m wrestling with React bugs at
-				midnight or celebrating a breakthrough in Python, you&apos;ll get the unfiltered view. If you&apos;re curious
-				about the &apos;why&apos; and &apos;how&apos; of coding, you&apos;ve come to the right place. Let&apos;s navigate the ever-evolving
-				world of software development and maybe learn something new along the way. Ready to dive in? Let&apos;s code!
+				As a developer, I&apos;m always looking for ways to improve my craft. This blog is no exception.
+				I&apos;m continually adding new features and functionality to enhance the user experience. Here are some
+				of the technologies that this blog currently uses:
+			</p>
+			<ul>
+				<li>Next.js 14</li>
+				<li>Sanity.io</li>
+				<li>Typescript</li>
+				<li>React</li>
+				<li>Tailwind CSS</li>
+			</ul>
+			<p>
+				If you are interested in the source code of this blog,{" "}
+				<Link
+					className='text-gray-600 dark:text-white  hover:text-primary transition no-underline'
+					href='https://github.com/Kellenparker/personalblog'
+					target="_blank"
+				>
+					here is a link to the repository
+				</Link>
+				.
 			</p>
 			<div className='flex w-full h-fit items-center'>
 				<Link className='mx-auto pattern-diamond no-underline p-2' href='/blog'>
@@ -32,3 +46,8 @@ export default function Home() {
 		</main>
 	);
 }
+
+export const metadata: Metadata = {
+	title: "Kellen Parker - Home",
+	description: "Welcome to the Kellen Parker blog!",
+};
