@@ -35,11 +35,11 @@ const config: Config = {
 				},
 				pattern: {
 					one: {
-						one: "#19415E",
-						two: "#132C40",
-						three: "#09131C",
-						four: "#0A1724",
-						five: "#0B1E28",
+						one: "#EF6F6C",
+						two: "#465775",
+						three: "#56E39F",
+						four: "#59C9A5",
+						five: "#5B6C5D",
 					},
 					two: {
 						one: "#E9F2F5",

@@ -40,13 +40,13 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
 						) : null}
 					</div>
 					<div className=''>
-						<p className='absolute top-0 right-0 bg-white dark:bg-dark p-2 m-2 text-sm leading-3 text-gray-800 dark:text-gray-100 z-10'>
+						<p className='absolute top-0 right-0 bg-white dark:bg-dark p-2 m-2 text-sm leading-3 text-gray-800 dark:text-gray-200 z-10'>
 							{post.series ? "Series: " : ""}
 							{post.series?.map((series: any) => (
 								<Link
 									key={series._id}
 									href={"/blog/series/" + series.slug.current}
-									className='text-gray-600 dark:text-gray-200 hover:text-primary'
+									className='text-gray-600 dark:text-white hover:text-primary'
 								>
 									{series.title}
 								</Link>
@@ -54,13 +54,13 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
 						</p>
 						<div className='flex h-full items-center relative p-2'>
 							<Link key={post._id} href={viewPath + post.slug.current} className='my-10'>
-								<h2 className='bg-white dark:bg-dark px-2 py-4 text-xl sm:text-2xl text-gray-600 dark:text-gray-200 hover:text-primary'>
+								<h2 className='bg-white dark:bg-dark px-2 py-4 text-xl sm:text-2xl text-gray-600 dark:text-white hover:text-primary'>
 									{post.title}
 								</h2>
 							</Link>
 						</div>
 
-						<p className='absolute bottom-0 right-0 bg-white dark:bg-dark  p-2 m-2 text-sm leading-3 text-gray-800 dark:text-gray-100 z-10'>
+						<p className='absolute bottom-0 right-0 bg-white dark:bg-dark  p-2 m-2 text-sm leading-3 text-gray-800 dark:text-gray-200 z-10'>
 							{formatDate(post.publishedAt)}
 						</p>
 					</div>

@@ -8,8 +8,8 @@ const Header = () => {
 			<div className='container max-w-screen-md mx-auto flex items-stretch justify-between'>
 				{/* Name with vertical line */}
 				<div className="flex py-0 ml-2 justify-center relative before:content-[''] before:block before:bg-pattern-three-two before:w-1 before:h-full before:absolute before:left-[-20px] flex-col">
-					<h1 className='text-black dark:text-white text-4xl py-0 font-bold select-none'>Kellen</h1>
-					<h2 className='text-black dark:text-white text-4xl py-0 font-bold select-none'>Parker</h2>
+					<h1 className='text-black dark:text-primary text-4xl py-0 font-bold select-none'>Kellen</h1>
+					<h2 className='text-black dark:text-primary text-4xl py-0 font-bold select-none'>Parker</h2>
 				</div>
 
 				{/* Navigation links with vertical line */}

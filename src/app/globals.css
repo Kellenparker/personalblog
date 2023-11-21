@@ -13,64 +13,32 @@
 	--background-color: #fff; /* Define default background color */
 }
 
-@media (prefers-color-scheme: dark) {
-	.pattern-stitch {
-		--c1: theme("colors.pattern.one.one");
-		--c2: theme("colors.pattern.one.four");
-		--c3: theme("colors.pattern.one.two");
-		--c4: theme("colors.pattern.one.five");
-	}
-	.pattern-trap {
-		--c1: theme("colors.pattern.one.two");
-		--c2: theme("colors.pattern.one.five");
-		--c3: theme("colors.pattern.one.four");
-		--c4: theme("colors.pattern.one.one");
-	}
-	.pattern-hatch {
-		--c1: theme("colors.pattern.one.one");
-		--c2: theme("colors.pattern.one.four");
-		--c3: theme("colors.pattern.one.two");
-	}
-	.pattern-diamond {
-		--c1: theme("colors.pattern.one.one");
-		--c2: theme("colors.pattern.one.four");
-		--c3: theme("colors.pattern.one.two");
-	}
-	.pattern-tri {
-		--c1: theme("colors.pattern.one.one");
-		--c2: theme("colors.pattern.one.four");
-		--c3: theme("colors.pattern.one.two");
-	}
+.pattern-stitch {
+	--c1: theme("colors.pattern.one.four");
+	--c2: theme("colors.pattern.one.three");
+	--c3: theme("colors.pattern.one.two");
+	--c4: theme("colors.pattern.one.one");
 }
-
-@media (prefers-color-scheme: light) {
-	.pattern-stitch {
-		--c1: theme("colors.pattern.two.two");
-		--c2: theme("colors.pattern.two.five");
-		--c3: theme("colors.pattern.two.four");
-		--c4: theme("colors.pattern.two.one");
-	}
-	.pattern-trap {
-		--c1: theme("colors.pattern.two.one");
-		--c2: theme("colors.pattern.two.three");
-		--c3: theme("colors.pattern.two.five");
-		--c4: theme("colors.pattern.two.four");
-	}
-	.pattern-hatch {
-		--c1: theme("colors.pattern.two.one");
-		--c2: theme("colors.pattern.two.four");
-		--c3: theme("colors.pattern.two.five");
-	}
-	.pattern-diamond {
-		--c1: theme("colors.pattern.two.five");
-		--c2: theme("colors.pattern.two.three");
-		--c3: theme("colors.pattern.two.one");
-	}
-	.pattern-tri {
-		--c1: theme("colors.pattern.two.one");
-		--c2: theme("colors.pattern.two.three");
-		--c3: theme("colors.pattern.two.five");
-	}
+.pattern-trap {
+	--c1: theme("colors.pattern.one.two");
+	--c2: theme("colors.pattern.one.four");
+	--c3: theme("colors.pattern.one.three");
+	--c4: theme("colors.pattern.one.one");
+}
+.pattern-hatch {
+	--c1: theme("colors.pattern.one.one");
+	--c2: theme("colors.pattern.one.four");
+	--c3: theme("colors.pattern.one.two");
+}
+.pattern-diamond {
+	--c1: theme("colors.pattern.one.three");
+	--c2: theme("colors.pattern.one.four");
+	--c3: theme("colors.pattern.one.two");
+}
+.pattern-tri {
+	--c1: theme("colors.pattern.one.three");
+	--c2: theme("colors.pattern.one.two");
+	--c3: theme("colors.pattern.one.one");
 }
 
 body,
@@ -80,7 +48,7 @@ html {
 
 .pattern-stitch {
 	--s: 30px; /* control the size */
-	
+
 	background: conic-gradient(at 50% calc(100% / 6), var(--c1) 60deg, transparent 0),
 		conic-gradient(at calc(100% / 6) 50%, transparent 240deg, var(--c1) 0),
 		conic-gradient(from 180deg at calc(100% / 6) calc(500% / 6), var(--c1) 60deg, transparent 0),

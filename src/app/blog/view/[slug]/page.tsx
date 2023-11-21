@@ -18,9 +18,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: any }) {
-	if(process.env.STAGE === 'development') {
-		noStore();
-	}
+	noStore();
 
 	const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
 	const isDraftMode = draftMode().isEnabled;
