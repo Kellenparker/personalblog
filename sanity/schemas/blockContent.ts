@@ -65,15 +65,26 @@ export default defineType({
 			type: "image",
 			options: { hotspot: true },
 			fields: [
-				{
+				defineField({
 					name: "alt",
 					type: "string",
 					title: "Alternative Text",
-				},
+				}),
 			],
 		}),
 		defineArrayMember({
 			type: "code",
+			options: {
+				languageAlternatives: [
+					{ title: "TypeScript", value: "typescript" },
+					{ title: "JavaScript", value: "javascript" },
+					{ title: "HTML", value: "html" },
+					{ title: "CSS", value: "css" },
+					{ title: "JSON", value: "json" },
+					{ title: "Markdown", value: "markdown" },
+					{ title: "C", value: "c" },
+				],
+			},
 		}),
 	],
 });
