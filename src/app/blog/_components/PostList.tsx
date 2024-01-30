@@ -4,8 +4,6 @@ import type { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../../../../sanity/lib/client";
 import { getRandomPatternClass } from '@/app/_utils/getRandomPatternClass';
-import { get } from "http";
-
 
 const builder = imageUrlBuilder(client);
 
@@ -69,3 +67,5 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
 		</main>
 	);
 }
+
+export const dynamic = 'force-dynamic';

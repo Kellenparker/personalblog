@@ -56,3 +56,5 @@ export default function Post({ post }: { post: SanityDocument }) {
 		</main>
 	);
 }
+
+export const dynamic = 'force-dynamic';

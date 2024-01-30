@@ -2,21 +2,10 @@ import { SanityDocument } from "next-sanity";
 import Posts from "@/app/blog/_components/PostList";
 import { postsBySeriesQuery, seriesQuery } from "../../../../../sanity/lib/queries";
 import { sanityFetch, token } from "../../../../../sanity/lib/sanityFetch";
-import { draftMode } from "next/headers";
-import PreviewPosts from "@/app/blog/_components/PreviewPosts";
-import PreviewProvider from "@/app/blog/_components/PreviewProvider";
 
 export default async function Home({ params }: { params: { slug: string } }) {
 	const posts = await sanityFetch<SanityDocument[]>({ query: postsBySeriesQuery, params });
 	const series = await sanityFetch<SanityDocument>({ query: seriesQuery, params });
-	const isDraftMode = draftMode().isEnabled;
-	if (isDraftMode && token) {
-		return (
-			<PreviewProvider token={token}>
-				<PreviewPosts posts={posts} />
-			</PreviewProvider>
-		);
-	}
 
 	return (
 		<main>
@@ -31,5 +20,4 @@ export default async function Home({ params }: { params: { slug: string } }) {
 	);
 }
 
-// If we are in developement, we don't want to be loading cached posts
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
