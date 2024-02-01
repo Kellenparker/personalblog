@@ -8,7 +8,7 @@ export default function Home() {
 			<div className='pattern-head p-2'>
 				<h1 className='bg-white dark:bg-dark w-fit p-2 m-0'>Welcome!</h1>
 			</div>
-			<h3>Hello World!</h3>
+			<h3>Hello!</h3>
 			<p>
 				Welcome to my blog! My name is Kellen Parker and I am a software developer based in Texas. My passions,
 				which will be expressed through the blog, include web developement, simulation, and system design. This
@@ -30,7 +30,7 @@ export default function Home() {
 			<p>
 				If you are interested in the source code of this blog,{" "}
 				<Link
-					className='text-gray-600 dark:text-white  hover:text-primary transition no-underline'
+					className='text-gray-600 dark:text-white  hover:text-primary transition no-underline italic'
 					href='https://github.com/Kellenparker/personalblog'
 					target="_blank"
 				>

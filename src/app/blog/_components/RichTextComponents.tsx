@@ -3,6 +3,7 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../../../../sanity/lib/client";
 import { stackoverflowDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import Link from "next/link";
 const builder = imageUrlBuilder(client);
 
 export const RichTextComponents = {
@@ -15,7 +16,7 @@ export const RichTextComponents = {
 						showLineNumbers={true}
 						language={value.language}
 						style={stackoverflowDark}
-						customStyle={{ borderRadius: "0", backgroundColor: "#282b2e"}}
+						customStyle={{ borderRadius: "0", backgroundColor: "#282b2e" }}
 					>
 						{value.code}
 					</SyntaxHighlighter>
@@ -41,7 +42,23 @@ export const RichTextComponents = {
 	block: {},
 	marks: {
 		code: ({ children }: any) => {
-			return <code className='bg-[#282b2e] text-white dark:border whitespace-nowrap border-gray-500 text-sm p-1 not-prose font-mono'>{children}</code>;
-		}
+			return (
+				<code className='bg-[#282b2e] text-white dark:border whitespace-nowrap border-gray-500 text-sm p-1 not-prose font-mono'>
+					{children}
+				</code>
+			);
+		},
+		link: ({ children, value }: any) => {
+			return (
+				<Link
+					href={value.href}
+					target={value.blank ? "_blank" : "_self"}
+					rel={value.blank ? "noopener noreferrer" : undefined}
+					className='text-gray-600 dark:text-white  hover:text-primary transition no-underline italic'
+				>
+					{children}
+				</Link>
+			);
+		},
 	},
 };
