@@ -6,36 +6,38 @@
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
-	--primary-color: #5e9fa3; /* Define your primary color */
-	--secondary-color: #b05574; /* Define your secondary color */
-	--accent-color: #b39c82; /* Define your accent color */
-	--text-color: #333; /* Define default text color */
-	--background-color: #fff; /* Define default background color */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .pattern-stitch {
+  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.four");
 	--c2: theme("colors.pattern.one.three");
 	--c3: theme("colors.pattern.one.two");
 	--c4: theme("colors.pattern.one.one");
 }
 .pattern-trap {
+  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.two");
 	--c2: theme("colors.pattern.one.four");
 	--c3: theme("colors.pattern.one.three");
 	--c4: theme("colors.pattern.one.one");
 }
 .pattern-hatch {
+  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.one");
 	--c2: theme("colors.pattern.one.four");
 	--c3: theme("colors.pattern.one.two");
 }
 .pattern-diamond {
+  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.three");
 	--c2: theme("colors.pattern.one.four");
 	--c3: theme("colors.pattern.one.two");
 }
 .pattern-tri {
+  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.three");
 	--c2: theme("colors.pattern.one.two");
 	--c3: theme("colors.pattern.one.one");
