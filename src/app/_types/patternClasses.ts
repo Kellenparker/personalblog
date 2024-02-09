@@ -1,8 +1,7 @@
 // These are reflected in global.css
-export type PatternClassName = "pattern-tri" | "pattern-stitch" | "pattern-trap" | "pattern-hatch";
+export type PatternClassName = "pattern-hatch" | "pattern-wallpaper" | "pattern-brick";
 export const patternClasses: PatternClassName[] = [
-	"pattern-tri",
-	"pattern-stitch",
-	"pattern-trap",
 	"pattern-hatch",
+	"pattern-wallpaper",
+	"pattern-brick",
 ];

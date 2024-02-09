@@ -10,34 +10,39 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.pattern-wallpaper {
+	--c1: theme("colors.pattern.one.four");
+	--c2: theme("colors.pattern.one.two");
+}
+
+.pattern-brick {
+	--c1: theme("colors.pattern.one.two");
+	--c2: theme("colors.pattern.one.four");
+}
+
 .pattern-stitch {
-  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.four");
 	--c2: theme("colors.pattern.one.three");
 	--c3: theme("colors.pattern.one.two");
 	--c4: theme("colors.pattern.one.one");
 }
 .pattern-trap {
-  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.two");
 	--c2: theme("colors.pattern.one.four");
 	--c3: theme("colors.pattern.one.three");
 	--c4: theme("colors.pattern.one.one");
 }
 .pattern-hatch {
-  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.one");
 	--c2: theme("colors.pattern.one.four");
 	--c3: theme("colors.pattern.one.two");
 }
 .pattern-diamond {
-  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.three");
 	--c2: theme("colors.pattern.one.four");
 	--c3: theme("colors.pattern.one.two");
 }
 .pattern-tri {
-  transform: translateZ(0);
 	--c1: theme("colors.pattern.one.three");
 	--c2: theme("colors.pattern.one.two");
 	--c3: theme("colors.pattern.one.one");
@@ -46,6 +51,26 @@
 body,
 html {
 	font-family: var(--font-poppins);
+}
+
+.pattern-wallpaper {
+	--s: 125px; /* control the size */
+
+	--_s: calc(2 * var(--s)) calc(2 * var(--s));
+	--_g: var(--_s) conic-gradient(at 40% 40%, #0000 75%, var(--c1) 0);
+	--_p: var(--_s) conic-gradient(at 20% 20%, #0000 75%, var(--c2) 0);
+	background: calc(0.9 * var(--s)) calc(0.9 * var(--s)) / var(--_p),
+		calc(-0.1 * var(--s)) calc(-0.1 * var(--s)) / var(--_p), calc(0.7 * var(--s)) calc(0.7 * var(--s)) / var(--_g),
+		calc(-0.3 * var(--s)) calc(-0.3 * var(--s)) / var(--_g),
+		conic-gradient(from 90deg at 20% 20%, var(--c2) 25%, var(--c1) 0) 0 0 / var(--s) var(--s);
+}
+
+.pattern-brick {
+	--s: 40px; /* control the size */
+
+	--c: var(--c1) 0 25%, var(--c2) 0 50%, #0000 0;
+	background: conic-gradient(from 180deg, var(--c)) 0 / var(--s) var(--s),
+		repeating-conic-gradient(from 90deg, var(--c)) 0 / calc(3 * var(--s)) calc(3 * var(--s));
 }
 
 .pattern-stitch {
