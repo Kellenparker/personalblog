@@ -48,13 +48,13 @@ const config: Config = {
 						four: "#E6E3E5",
 						five: "#DEDDDC",
 					},
-          three: {
-            one: "#393E41",
-            two: "#D3D0CB",
-            three: "#E7E5DF",
-            four: "#44BBA4",
-            five: "#E7BB41",
-          },
+					three: {
+						one: "#393E41",
+						two: "#D3D0CB",
+						three: "#E7E5DF",
+						four: "#44BBA4",
+						five: "#E7BB41",
+					},
 				},
 				secondary: "#YOUR_SECONDARY_COLOR",
 			},
@@ -70,6 +70,6 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/typography")],
+	plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };
 export default config;

@@ -10,7 +10,7 @@ export const RichTextComponents = {
 	types: {
 		code: ({ value }: any) => {
 			return (
-				<div className=''>
+				<div className='scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300'>
 					<SyntaxHighlighter
 						className='py-0 my-0 font-mono'
 						showLineNumbers={true}
