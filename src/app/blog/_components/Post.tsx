@@ -27,17 +27,17 @@ export default function Post({ post }: { post: SanityDocument }) {
 	}
 
 	return (
-		<main className='container mx-auto prose dark:prose-invert prose-lg max-w-screen-md mb-60'>
+		<main className='container mx-auto prose prose-invert prose-lg max-w-screen-md mb-60'>
 			<div className={`${randomPattern} p-2 mt-10`}>
-				<h1 className='bg-white dark:bg-dark w-fit p-2 m-0'>{post.title}</h1>
+				<h1 className='bg-dark w-fit p-2 m-0'>{post.title}</h1>
 				<div className='flex flex-row justify-between'>
-					<p className='text-sm bg-white dark:bg-dark w-fit p-2 m-0 mt-2'>
+					<p className='text-sm bg-dark w-fit p-2 m-0 mt-2'>
 						{formatDate(post.publishedAt)}
 					</p>
 					{/** TODO: if more than one post per series is desired; change this */}
 					<Link
 						href={"/blog/series/" + post.series[0].slug.current}
-						className='bg-white dark:bg-dark text-sm text-right no-underline text-gray-600 dark:text-white hover:text-primary w-fit p-2 m-0 mt-2'
+						className='bg-dark text-sm text-right no-underline text-white hover:text-primary w-fit p-2 m-0 mt-2'
 					>
 						{post.series[0].title}
 					</Link>

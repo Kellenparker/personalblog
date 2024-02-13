@@ -4,9 +4,9 @@ import { Metadata } from "next/types";
 
 export default function Home() {
 	return (
-		<main className='container mx-auto max-w-screen-md prose dark:prose-invert my-10'>
+		<main className='container mx-auto max-w-screen-md prose prose-invert my-10'>
 			<div className='pattern-head p-2'>
-				<h1 className='bg-white dark:bg-dark w-fit p-2 m-0'>Welcome!</h1>
+				<h1 className='bg-dark w-fit p-2 m-0'>Welcome!</h1>
 			</div>
 			<h3>Hello!</h3>
 			<p>
@@ -30,7 +30,7 @@ export default function Home() {
 			<p>
 				If you are interested in the source code of this blog,{" "}
 				<Link
-					className='text-gray-600 dark:text-white  hover:text-primary transition no-underline italic'
+					className='text-white  hover:text-primary transition no-underline italic'
 					href='https://github.com/Kellenparker/personalblog'
 					target="_blank"
 				>

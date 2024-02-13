@@ -7,12 +7,13 @@ import Link from "next/link";
 const builder = imageUrlBuilder(client);
 
 export const RichTextComponents = {
+
 	types: {
 		code: ({ value }: any) => {
 			return (
 				<div className=''>
 					<SyntaxHighlighter
-						className='py-0 my-0 font-mono scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300'
+						className='py-0 my-0 font-mono scrollbar-thumb-gray-500 scrollbar-track-gray-800 scrollbar-thin'
 						showLineNumbers={true}
 						language={value.language}
 						style={stackoverflowDark}
@@ -43,7 +44,7 @@ export const RichTextComponents = {
 	marks: {
 		code: ({ children }: any) => {
 			return (
-				<code className='bg-[#282b2e] text-white dark:border whitespace-nowrap border-gray-500 text-sm p-1 not-prose font-mono'>
+				<code className='bg-[#282b2e] text-white border whitespace-nowrap border-gray-500 text-sm p-1 not-prose font-mono'>
 					{children}
 				</code>
 			);
@@ -54,7 +55,7 @@ export const RichTextComponents = {
 					href={value.href}
 					target={value.blank ? "_blank" : "_self"}
 					rel={value.blank ? "noopener noreferrer" : undefined}
-					className='text-gray-600 dark:text-white  hover:text-primary transition no-underline italic'
+					className='text-white  hover:text-primary transition no-underline italic'
 				>
 					{children}
 				</Link>

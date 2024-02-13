@@ -8,9 +8,9 @@ export default async function Home() {
 
 	return (
 		<main>
-			<div className='container mx-auto max-w-screen-md prose my-10'>
+			<div className='container mx-auto max-w-screen-md prose prose-invert my-10'>
 				<div className='pattern-head p-2'>
-					<h1 className='bg-white dark:bg-dark dark:text-white w-fit p-2 m-0'>Blog</h1>
+					<h1 className='bg-dark text-white w-fit p-2 m-0'>Blog</h1>
 				</div>
 			</div>
 			<Posts posts={posts} />
