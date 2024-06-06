@@ -3,7 +3,7 @@
 import { groq } from "next-sanity";
 
 // Get all posts
-export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt){
+export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
     _id, 
     title, 
     slug, 
@@ -16,7 +16,7 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | ord
   }`;
 
 // Get all posts by series
-export const postsBySeriesQuery = groq`*[_type == "post" && defined(slug.current) && $slug in series[]->slug.current] | order(publishedAt){
+export const postsBySeriesQuery = groq`*[_type == "post" && defined(slug.current) && $slug in series[]->slug.current] | order(publishedAt desc){
     _id,
     title,
     slug,
