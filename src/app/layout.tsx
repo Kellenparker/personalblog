@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Nunito_Sans } from "next/font/google";
 
 const global = Nunito_Sans({
@@ -12,7 +13,7 @@ import Header from "./_components/Header";
 export const metadata: Metadata = {
 	title: 'Kellen Parker - Blog',
 	description: "Kellen Parker's personal blog",
-	
+
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={`${global.className}`}>
 				<Header />
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	);
